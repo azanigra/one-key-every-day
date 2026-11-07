@@ -3,7 +3,10 @@ import math, os, subprocess, sys
 from concurrent.futures import ThreadPoolExecutor
 
 W, H, FPS, DUR = 1080, 1920, 30, 15.0
+if len(sys.argv) != 2:
+    sys.exit("usage: python3 make.py FRAMES_DIR")
 OUT = sys.argv[1]
+os.makedirs(OUT, exist_ok=True)
 BG, BG2, SURF, EDGE = "#1a1b26", "#13141c", "#24283b", "#414868"
 TEXT, TEXT2, MUTED, BRAND, CYAN = "#c0caf5", "#a9b1d6", "#8b93b8", "#9ece6a", "#7dcfff"
 FONT = "JetBrainsMono Nerd Font"
